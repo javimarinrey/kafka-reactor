@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: productor
+  kafka:
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:kafka:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+
+kafka:
+  topic: eventos-reactivos
+
+
+
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG
